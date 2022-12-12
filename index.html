@@ -6,35 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<style>
+
+    .cardClass {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #btn {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        margin-left: 45.8vw;
+        padding: 1vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+</style>
+
 <body>
 
+    <button id="btn">New book</button>
     <div id="books"></div>
-    <button>New book</button>
 
 </body>
 
 <script>
-    let myLibrary = [];
-
-    function Book() {
-
-    }
+    let container2 = document.getElementById('books');
+    let btn = document.getElementById("btn");
+    btn.addEventListener('click', event => {
+        addBookToLibrary();
+    })
 
     function addBookToLibrary() {
-        let book = readLine("Input a book!");
+        let book = window.prompt("Input a book title!");
+        let author = window.prompt("Input the author!");
+        let pages = window.prompt("Input the number of pages!");
+        let container = document.createElement("div")
+        container2.appendChild(container);
+        container.className = "cardClass"
         myLibrary.push(book);
+        myAuthors.push(author);
+        myPages.push(pages);
+        let ele1 = document.createElement("div")
+        ele1.innerHTML += book;
+        ele1.className = "book";
+        container.appendChild(ele1)
+        let ele2 = document.createElement("div")
+        ele2.innerHTML += author;
+        ele2.className = "author";
+        container.appendChild(ele2)
+        let ele3 = document.createElement("div")
+        ele3.innerHTML += pages;
+        ele3.className = "page";
+        container.appendChild(ele3)
     }
 
-    function loopThrough() {
-        let i = 0;
-
-        for(i = 0; i < myLibrary.length; i++) {
-            let currentBook = myLibrary[i];
-            document.getElementById('books').innerHTML += currentBook + " ";
-        }
-    }
-
-    loopThrough()
 </script>
 
 </html>
