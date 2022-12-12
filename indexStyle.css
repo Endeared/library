@@ -1,0 +1,23 @@
+.cardClass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+}
+
+.remove {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(84, 155, 255, 0.738);
+    padding: 1vw;
+}
+
+#btn {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 45.9vw;
+    padding: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
